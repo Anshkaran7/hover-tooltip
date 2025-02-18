@@ -1,14 +1,13 @@
 {
   "name": "hover-tooltip",
   "version": "1.0.1",
-  "description": "A React component for a hover tooltip",
-  "keywords": [
-    "react",
-    "tooltip",
-    "component",
-    "hover"
-  ],
+"description": "A lightweight React tooltip component with smooth animations and customizable styles.",
+  "keywords": ["react", "tooltip", "hover", "animation", "UI", "UX", "popover", "lightweight"],
   "author": "Karan <ansh.tsx@gmail.com>",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/anshkaran7/hover-tooltip"
+},
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
