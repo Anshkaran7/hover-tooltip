@@ -7,6 +7,6 @@ declare module "hover-tooltip" {
     children: ReactNode;
   }
 
-  declare const Tooltip: React.FC<TooltipProps>;
+  const Tooltip: React.FC<TooltipProps>;
   export default Tooltip;
 }
