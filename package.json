@@ -1,0 +1,47 @@
+{
+  "name": "hover-tooltip",
+  "version": "1.0.1",
+  "description": "A React component for a hover tooltip",
+  "keywords": [
+    "react",
+    "tooltip",
+    "component",
+    "hover"
+  ],
+  "author": "Karan <ansh.tsx@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "framer-motion": "^12.4.3"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@storybook/addon-essentials": "^8.5.6",
+    "@storybook/addon-interactions": "^8.5.6",
+    "@storybook/addon-onboarding": "^8.5.6",
+    "@storybook/blocks": "^8.5.6",
+    "@storybook/react": "^8.5.6",
+    "@storybook/react-vite": "^8.5.6",
+    "@storybook/test": "^8.5.6",
+    "@types/react": "^19.0.10",
+    "rollup": "^4.34.8",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "storybook": "^8.5.6"
+  }
+}
