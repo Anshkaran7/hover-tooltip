@@ -1,6 +1,6 @@
 {
   "name": "hover-tooltip",
-  "version": "1.0.1",
+  "version": "1.0.2",
 "description": "A lightweight React tooltip component with smooth animations and customizable styles.",
   "keywords": ["react", "tooltip", "hover", "animation", "UI", "UX", "popover", "lightweight"],
   "author": "Karan <ansh.tsx@gmail.com>",
