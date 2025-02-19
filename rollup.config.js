@@ -1,29 +1,25 @@
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import typescript from '@rollup/plugin-typescript';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 export default {
-  input: "src/Tooltip.tsx",
-  output: [
-    {
-      file: "dist/index.js",
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: "dist/index.esm.js",
-      format: "esm",
-      sourcemap: true,
-    },
-  ],
+  input: ['src/index.ts', 'src/index.js'],
+  output: {
+    dir: 'dist',
+    format: 'esm',
+    sourcemap: true
+  },
   plugins: [
     peerDepsExternal(),
-    resolve(),
+    resolve({
+      extensions: ['.js', '.ts', '.jsx', '.tsx']
+    }),
     commonjs(),
     typescript({
-      tsconfig: "./tsconfig.json",
-    }),
-  ],
-  external: ["react", "react-dom", "framer-motion"],
-};
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist'
+    })
+  ]
+}

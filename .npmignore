@@ -2,9 +2,6 @@ src/
 node_modules/
 dist/
 *.log
-*.ts
-*.tsx
 .git
 .gitignore
-rollup.config.js
-tsconfig.json 
+rollup.config.js 

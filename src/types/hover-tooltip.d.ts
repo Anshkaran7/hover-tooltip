@@ -1,9 +1,24 @@
 declare module "hover-tooltip" {
-  // If you know the specific exports and types, declare them here.
-  // For example:
-  // export function someFunction(): SomeType;
+  import { ReactNode } from "react";
 
-  // If you don't know the specific types, you can use `any` as a placeholder.
-  const hoverTooltip: any;
-  export default hoverTooltip;
+  export interface TooltipProps {
+    children: ReactNode;
+    text: string;
+    position?: "top" | "bottom" | "left" | "right";
+    theme?: "modern" | "elegant" | "frost" | "neon" | "soft" | "glass";
+    delay?: number;
+    arrow?: boolean;
+    maxWidth?: string;
+    className?: string;
+    animation?: "smooth" | "pop" | "shift" | "elastic" | "fade" | "scale";
+    duration?: number;
+    distance?: number;
+    showOnClick?: boolean;
+    persistent?: boolean;
+    fontSize?: "sm" | "base" | "lg";
+    rich?: boolean;
+  }
+
+  export const Tooltip: React.FC<TooltipProps>;
+  export default Tooltip;
 }
