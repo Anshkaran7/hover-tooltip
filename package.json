@@ -1,18 +1,27 @@
 {
   "name": "hover-tooltip",
-  "version": "1.0.8",
-"description": "A lightweight React tooltip component with smooth animations and customizable styles.",
-  "keywords": ["react", "tooltip", "hover", "animation", "UI", "UX", "popover", "lightweight"],
+  "version": "1.1.0",
+  "description": "A lightweight React tooltip component with smooth animations and customizable styles.",
+  "keywords": [
+    "react",
+    "tooltip",
+    "hover",
+    "animation",
+    "UI",
+    "UX",
+    "popover",
+    "lightweight"
+  ],
   "author": "Karan <ansh.tsx@gmail.com>",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/anshkaran7/hover-tooltip"
-},
+    "type": "git",
+    "url": "https://github.com/anshkaran7/hover-tooltip"
+  },
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-"types": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
     "prepare": "npm run build",
@@ -20,9 +29,9 @@
     "build-storybook": "storybook build"
   },
   "peerDependencies": {
-  "react": ">=18.0.0 <20.0.0",
-  "react-dom": ">=18.0.0 <20.0.0"
-},
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0"
+  },
   "dependencies": {
     "framer-motion": "^12.4.3"
   },
