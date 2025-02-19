@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
     "outDir": "dist",
-    "declaration": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "declarationMap": true,
+    "declaration": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "target": "es5",
     "module": "esnext",
     "jsx": "react",
@@ -10,7 +17,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "src/types",
+    "types"
+  ]
 }
