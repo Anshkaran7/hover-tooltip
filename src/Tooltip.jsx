@@ -69,15 +69,44 @@ const Tooltip = ({
 
   const getThemeClasses = () => {
     const themes = {
-      modern: "bg-slate-900 text-white shadow-lg shadow-slate-900/20",
-      elegant:
-        "bg-white/95 text-slate-900 shadow-xl border border-slate-200/50 backdrop-blur-sm",
-      frost:
-        "bg-white/20 backdrop-blur-md text-white shadow-lg border border-white/30",
-      neon: "bg-black/90 text-white shadow-lg border-2 border-purple-500/50 shadow-purple-500/20",
-      soft: "bg-slate-100 text-slate-700 shadow-md border border-slate-200",
-      glass:
-        "bg-white/10 backdrop-blur-lg border border-white/20 text-white shadow-xl",
+      modern: `
+        bg-slate-800/95 text-white 
+        shadow-lg shadow-slate-900/20 
+        backdrop-blur-sm border border-slate-700/50 
+        ring-1 ring-white/10
+        dark:bg-slate-900/95 dark:border-slate-600/50
+      `,
+      elegant: `
+        bg-white/95 text-slate-900
+        shadow-xl border border-slate-200/50 
+        backdrop-blur-sm ring-1 ring-black/5
+        dark:bg-slate-800/95 dark:text-white dark:border-slate-700/50
+      `,
+      frost: `
+        bg-white/20 backdrop-blur-md text-white 
+        shadow-xl border border-white/30 
+        ring-1 ring-white/20 
+        from-white/10 to-transparent bg-gradient-to-b
+      `,
+      neon: `
+        bg-black/90 text-white 
+        shadow-xl border border-purple-500/50 
+        shadow-purple-500/20 backdrop-blur-sm 
+        ring-1 ring-purple-500/50
+        from-purple-500/10 to-transparent bg-gradient-to-b
+      `,
+      soft: `
+        bg-slate-50/95 text-slate-700 
+        shadow-lg border border-slate-200/50 
+        backdrop-blur-sm ring-1 ring-slate-200/50
+        dark:bg-slate-700/95 dark:text-slate-100
+      `,
+      glass: `
+        bg-white/15 backdrop-blur-lg 
+        border border-white/20 text-white 
+        shadow-xl ring-1 ring-white/20 
+        from-white/10 to-white/5 bg-gradient-to-b
+      `,
     };
     return themes[theme];
   };
@@ -139,13 +168,13 @@ const Tooltip = ({
   };
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-flex items-center justify-center">
       <div
         ref={triggerRef}
         onClick={handleMouseEvents}
         onMouseEnter={handleMouseEvents}
         onMouseLeave={() => !persistent && setVisible(false)}
-        className="cursor-pointer"
+        className="inline-flex items-center justify-center"
       >
         {children}
       </div>
@@ -161,18 +190,30 @@ const Tooltip = ({
               duration: duration,
               delay: visible ? delay : 0,
             }}
-            style={{ maxWidth }}
+            style={{ maxWidth, pointerEvents: "none" }}
             className={`
-              fixed px-4 py-2 rounded-lg
+              fixed px-4 py-2.5 rounded-lg
               font-medium tracking-wide
               ${getFontSizeClass()}
               ${getThemeClasses()}
               ${getPositionClasses()}
               ${getArrowClasses()}
               ${className}
+              z-50 select-none
+              backdrop-saturate-150
+              [text-wrap:balance]
             `}
           >
-            {rich ? <div dangerouslySetInnerHTML={{ __html: text }} /> : text}
+            <div className="relative z-10 flex items-center gap-1.5">
+              {rich ? (
+                <div 
+                  dangerouslySetInnerHTML={{ __html: text }} 
+                  className="relative z-10"
+                />
+              ) : (
+                <span className="relative z-10">{text}</span>
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

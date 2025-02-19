@@ -15,6 +15,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", "src/types"],
+  "include": ["src", "src/types", "src/Tooltip.tsx"],
   "exclude": ["node_modules", "dist"]
 }
